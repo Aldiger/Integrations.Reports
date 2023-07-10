@@ -1,4 +1,5 @@
-﻿using Reports.Core.Helpers;
+﻿using Integrations.Reports.Core.Helpers;
+using Reports.Core.Helpers;
 using System.IO.Compression;
 using System.Security;
 using System.Text;

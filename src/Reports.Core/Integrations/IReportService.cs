@@ -1,5 +1,5 @@
 ﻿using Integrations.Reports.Core.Dto;
-using Reports.Core.Integrations.Report;
+using Integrations.Reports.Core.Helpers;
 
 namespace Reports.Core.Integrations
 {

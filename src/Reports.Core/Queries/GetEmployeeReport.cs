@@ -1,6 +1,6 @@
 ﻿using Integrations.Reports.Core.Dto;
+using Integrations.Reports.Core.Helpers;
 using MediatR;
-using Reports.Core.Integrations.Report;
 
 namespace Integrations.Reports.Core.Queries
 {

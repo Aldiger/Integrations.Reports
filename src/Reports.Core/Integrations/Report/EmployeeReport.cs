@@ -11,7 +11,7 @@ namespace Integrations.Reports.Core.Integrations.Report
         private readonly IList<EmployeeDto> _data;
 
         public EmployeeReport(ReportingServiceEmployeeReportDto model)
-            : base(ReportTypes.Excel, model.OutputPath, new[] { "Employees" })
+            : base(model.OutputType, model.OutputPath, new[] { "Employees" })
         {
             _data = model.Data;
             _applicationName = model.ApplicationName;
@@ -61,7 +61,7 @@ namespace Integrations.Reports.Core.Integrations.Report
 
                 //Generic headers
                 tw.Write("<row>");
-                tw.Write(GetExcelCellData($"{_applicationName} User Report", ++row, 1, "str", "1"));
+                tw.Write(GetExcelCellData($"{_applicationName} Employees", ++row, 1, "str", "1"));
                 tw.Write("</row>");
 
 

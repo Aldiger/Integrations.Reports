@@ -1,6 +1,7 @@
 ﻿using Integrations.Reports.Core.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace Reports.API.Controllers
 {
@@ -17,8 +18,9 @@ namespace Reports.API.Controllers
         [HttpPost("employee")]
         public async Task<IActionResult> EmployeeReport(GetEmployeeReport request, CancellationToken token)
         {
-            var result = _mediator.Send(request, token);
-            return Ok(result);
+            var result = await _mediator.Send(request, token);
+            new FileExtensionContentTypeProvider().TryGetContentType(result.Report.FileName, out var contentType);
+            return File(await System.IO.File.ReadAllBytesAsync(result.Report.FilePath), contentType, result.Report.FileName);
         }
     }
 }

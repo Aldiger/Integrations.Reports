@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel;
 
-namespace Reports.Core.Integrations.Report
+namespace Integrations.Reports.Core.Helpers
 {
     public enum ReportTypes
     {
-        [Description("PDF")]
-        Pdf,
         [Description("EXCELOPENXML")]
         Excel,
         [Description("CSV")]
@@ -13,9 +11,8 @@ namespace Reports.Core.Integrations.Report
         [Description("XML")]
         Xml
     }
-    public static class Constants 
+    public static class Constants
     {
-        public const string PdfExtension = ".pdf";
         public const string CommaDelimitedExtension = ".csv";
         public const string TabDelimitedExtension = ".txt";
         public const string ExcelExtension = ".xlsx";
